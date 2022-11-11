@@ -24,10 +24,10 @@ export const PERSONAL_INFO = {
   name: 'Teona',
   title: "In-Game Photography",
   subtitle: 'A collection of photos taken in VR',
-  role: 'Digital Artist',
+  role: 'In-Game Photographer',
   contact: 'mailto:mushambadzeteona@gmail.com',
   avatar:
-    'https://cdn.discordapp.com/attachments/1023544104698773564/1025325255843127386/Ema_portrait_of_a_young_men_with_snowy_mountains_at_the_backgro_9c3a800b-294c-481b-8c57-0c84ba46ba08.png',
+    'https://res.cloudinary.com/highflyer910/image/upload/v1668194744/ingame_pics/5.png',
   about:
-    'During the day I am Software Engineer, but at night I switched into my Artistic side. Most of my creations are made with Mid Journey (AI generation), and later on improved using Adobe Photoshop.',
+    'I am a Frontend Engineer, but at times I dive into art. My creations are made during my journey in virtual worlds, and later on improved using different graphic tools.',
 } as const;

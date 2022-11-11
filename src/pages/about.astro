@@ -15,14 +15,14 @@ const title = `${name} - About`;
     <main class="mb-auto align-middle flex flex-col items-center">
       <div class="my-8 sm:my-12">
         <h2
-          class="text-gray-800 dark:text-white text-2xl lg:text-3xl text-center mb-4 md:mb-6 font-semibold"
+          class="text-midnight dark:text-white text-2xl lg:text-3xl text-center mb-4 md:mb-6 font-semibold"
         >
           About me
         </h2>
       </div>
 
       <div
-        class="bg-white dark:bg-slate-900 py-2 sm:py-4 lg:py-8 w-fit mx-4 rounded-xl"
+        class="bg-white dark:bg-midnight py-2 sm:py-4 lg:py-8 w-fit mx-4 rounded-xl"
       >
         <div class="max-w-screen-lg px-4 md:px-8">
           <div class="grid sm:grid-cols-2 gap-8 items-center">
@@ -31,12 +31,12 @@ const title = `${name} - About`;
               class="flex flex-col justify-center items-center sm:items-start md:py-24 lg:py-32"
             >
               <p
-                class="text-indigo-500 text-sm md:text-base font-semibold uppercase mb-4"
+                class="text-midnight text-sm md:text-base font-semibold uppercase mb-4"
               >
                 {role}
               </p>
               <h1
-                class="text-gray-800 dark:text-gray-200 text-2xl md:text-3xl font-bold text-center sm:text-left mb-4"
+                class="text-midnight dark:text-midnight text-2xl md:text-3xl font-bold text-center sm:text-left mb-4"
               >
                 {name}
               </h1>
@@ -45,7 +45,7 @@ const title = `${name} - About`;
                 about
                   .split('.')
                   .map((text) => (
-                    <p class="text-gray-500 md:text-lg text-center sm:text-left mb-8">
+                    <p class="text-midnight md:text-lg text-center sm:text-left mb-8">
                       {text}
                     </p>
                   ))
@@ -53,13 +53,13 @@ const title = `${name} - About`;
 
               <a
                 href={contact}
-                class="inline-block bg-gray-200 hover:bg-gray-300 focus-visible:ring ring-indigo-300 text-gray-500 active:text-gray-700 text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3"
+                class="inline-block bg-midnight focus-visible:ring ring-white text-white text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3"
                 >Contact</a
               >
             </div>
 
             <div
-              class="h-fit bg-gray-100 max-w-md sm:max-w-lg mx-auto overflow-hidden shadow-lg rounded-lg relative object-cover object-center"
+              class="h-fit bg-midnight max-w-md sm:max-w-lg mx-auto overflow-hidden shadow-lg rounded-lg relative object-cover object-center"
             >
               <Img src={avatar} alt="Portrait" width={600} />
             </div>
