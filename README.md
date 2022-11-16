@@ -1,5 +1,7 @@
 # In-Game Photography
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/a46beda4-7b15-4834-8da3-e52b4faeb917/deploy-status)](https://app.netlify.com/sites/ingame-photography/deploys)
+
 > Built with Astro and using Notion API.
 
 ## [Demo](https://ingame-photography.netlify.app/)
@@ -26,17 +28,9 @@ DATABASE_ID=
 
 You can find how to get these values for your page inside [the official documentation of Notion](https://developers.notion.com/docs/working-with-databases).
 
-## Commands
+## Acknowledgemnets
 
-All commands are run from the root of the project, from a terminal:
-
-| Command          | Action                                             |
-| :--------------- | :------------------------------------------------- |
-| `yarn`           | Installs dependencies                              |
-| `yarn dev`       | Starts local dev server at `localhost:3000`        |
-| `yarn build`     | Build your production site to `./dist/`            |
-| `yarn preview`   | Preview your build locally, before deploying       |
-| `yarn astro ...` | Run CLI commands like `astro add`, `astro preview` |
+Check out [Ema Suriano's repo](https://github.com/EmaSuriano/astro-art-portfolio). Inspired by his Astro theme.
 
 ## License
 
