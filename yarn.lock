@@ -15,12 +15,7 @@
   resolved "https://registry.yarnpkg.com/@astrojs/compiler/-/compiler-0.23.5.tgz#ea57a2b994b2930e3b3d2d524f10866698fef4f1"
   integrity sha512-vBMPy9ok4iLapSyCCT1qsZ9dK7LkVFl9mObtLEmWiec9myGHS9h2kQY2xzPeFNJiWXUf9O6tSyQpQTy5As/p3g==
 
-"@astrojs/compiler@^0.29.5":
-  version "0.29.8"
-  resolved "https://registry.yarnpkg.com/@astrojs/compiler/-/compiler-0.29.8.tgz#48b85872a15752ac3a482047ef6e51cf0e2d76c2"
-  integrity sha512-D4qKnSQcOF32LgskeGnzq35N30yrITgrSaQrt/EIPU6ItcgcUr/K1BG07JCZdc+4mbfWF6RFQc7yPP9pS8Sg8w==
-
-"@astrojs/compiler@^0.29.3":
+"@astrojs/compiler@^0.29.3", "@astrojs/compiler@^0.29.5":
   version "0.29.8"
   resolved "https://registry.yarnpkg.com/@astrojs/compiler/-/compiler-0.29.8.tgz#48b85872a15752ac3a482047ef6e51cf0e2d76c2"
   integrity sha512-D4qKnSQcOF32LgskeGnzq35N30yrITgrSaQrt/EIPU6ItcgcUr/K1BG07JCZdc+4mbfWF6RFQc7yPP9pS8Sg8w==
@@ -3506,10 +3501,10 @@ phin@^2.9.1:
   resolved "https://registry.yarnpkg.com/phin/-/phin-2.9.3.tgz#f9b6ac10a035636fb65dfc576aaaa17b8743125c"
   integrity sha512-CzFr90qM24ju5f88quFC/6qohjC144rehe5n6DH900lgXmUe86+xCKc10ev56gRKC4/BkHUoG4uSiQgBiIXwDA==
 
-photoswipe@^5.3.3:
-  version "5.3.3"
-  resolved "https://registry.yarnpkg.com/photoswipe/-/photoswipe-5.3.3.tgz#86351a33502a3ab7d1e483127fe596b20054218a"
-  integrity sha512-BUuulwZwkYFKADSe5xf0dd+wf6dws34ZvqP8R3oYHepRauOXoQHvw600sw1HlWd8K0S3LRCS4jxyR5fTuI383Q==
+photoswipe@^5.3.4:
+  version "5.3.4"
+  resolved "https://registry.yarnpkg.com/photoswipe/-/photoswipe-5.3.4.tgz#5a07393e76abe317386c1e1e3a62be7745f97822"
+  integrity sha512-SN+RWHqxJvdwzXJsh8KrG+ajjPpdTX5HpKglEd0k9o6o5fW+QHPkW8//Bo11MB+NQwTa/hFw8BDv2EdxiDXjNw==
 
 picocolors@^1.0.0:
   version "1.0.0"
