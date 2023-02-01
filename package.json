@@ -13,7 +13,7 @@
   "dependencies": {
     "@astrojs/tailwind": "^2.1.1",
     "@notionhq/client": "^2.2.1",
-    "astro": "^1.6.12",
+    "astro": "^2.0.4",
     "astro-imagetools": "^0.6.17",
     "photoswipe": "^5.3.4",
     "tailwindcss": "^3.2.1"
