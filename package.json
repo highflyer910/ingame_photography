@@ -16,7 +16,7 @@
     "astro": "^1.6.12",
     "astro-imagetools": "^0.6.17",
     "photoswipe": "^5.3.5",
-    "tailwindcss": "^3.2.1"
+    "tailwindcss": "^3.2.4"
   },
   "devDependencies": {
     "prettier": "^2.8.0",
