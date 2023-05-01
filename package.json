@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@astrojs/tailwind": "^3.1.1",
-    "@notionhq/client": "^2.2.3",
+    "@notionhq/client": "^2.2.4",
     "astro": "^2.1.9",
     "astro-imagetools": "^0.8.1",
     "photoswipe": "^5.3.7",
