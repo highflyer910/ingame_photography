@@ -15,7 +15,7 @@
     "@jridgewell/gen-mapping" "^0.3.0"
     "@jridgewell/trace-mapping" "^0.3.9"
 
-"@astrojs/compiler@^1.0.1", "@astrojs/compiler@^1.4.1", "@astrojs/compiler@^1.5.3", "@astrojs/compiler@^1.5.5":
+"@astrojs/compiler@^1.0.1", "@astrojs/compiler@^1.4.1", "@astrojs/compiler@^1.5.5", "@astrojs/compiler@^1.6.3":
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/@astrojs/compiler/-/compiler-1.7.0.tgz#c31653adc6bb93e1953077c74d3ca99469c267d7"
   integrity sha512-+wXur+Nr2WyeGmccBetjUOE1P7Aut8oGzDI+wFhJ31L3Fb8/dsUCRdeVzNTFzkMI7BH5DXy+yUnDz4vudQE5JQ==
@@ -993,6 +993,11 @@
   dependencies:
     "@types/ms" "*"
 
+"@types/dom-view-transitions@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@types/dom-view-transitions/-/dom-view-transitions-1.0.1.tgz#55333c2862c349153b9007ca01011d9379c12c6c"
+  integrity sha512-A9S1ijj/4MX06I1W/6on8lhaYyq1Ir7gaOvfllW1o4RzVWW88HAeqX0pUx9VgOLnNpdiGeUW2CTkg18p5LWIrA==
+
 "@types/hast@^2.0.0":
   version "2.3.4"
   resolved "https://registry.yarnpkg.com/@types/hast/-/hast-2.3.4.tgz#8aa5ef92c117d20d974a82bdfb6a648b08c0bafc"
@@ -1179,12 +1184,12 @@ astro-imagetools@^0.8.1:
   optionalDependencies:
     imagetools-core "3.0.2"
 
-astro@^2.8.3:
-  version "2.8.3"
-  resolved "https://registry.yarnpkg.com/astro/-/astro-2.8.3.tgz#fc78c9afe67f92cb86551cd89ce66166bc367f54"
-  integrity sha512-UopGl3WubMnl15TWlR6PTCcH54TooZ+JoAloErfoXQtz4PAvmEEqEVc7tHoJ45iC7rhKgzILsvDhqzitBeRihw==
+astro@^2.9.6:
+  version "2.9.6"
+  resolved "https://registry.yarnpkg.com/astro/-/astro-2.9.6.tgz#3f70a11c96ce465f465a41bcd6c6d4c099edc7c9"
+  integrity sha512-yvbZQ6YOWYLejyQ4nAcgZLDYQ34enQJ5/LWlXKtUzXzpsUHB75vJMj+XmEq5Q2eVlZOlQrp0lU+nhSRGaOsOUQ==
   dependencies:
-    "@astrojs/compiler" "^1.5.3"
+    "@astrojs/compiler" "^1.6.3"
     "@astrojs/internal-helpers" "^0.1.1"
     "@astrojs/language-server" "^1.0.0"
     "@astrojs/markdown-remark" "^2.2.1"
@@ -1197,6 +1202,7 @@ astro@^2.8.3:
     "@babel/traverse" "^7.22.5"
     "@babel/types" "^7.22.5"
     "@types/babel__core" "^7.20.1"
+    "@types/dom-view-transitions" "^1.0.1"
     "@types/yargs-parser" "^21.0.0"
     acorn "^8.9.0"
     boxen "^6.2.1"
@@ -1220,6 +1226,7 @@ astro@^2.8.3:
     kleur "^4.1.4"
     magic-string "^0.27.0"
     mime "^3.0.0"
+    network-information-types "^0.1.1"
     ora "^6.3.1"
     p-limit "^4.0.0"
     path-to-regexp "^6.2.1"
@@ -1235,7 +1242,7 @@ astro@^2.8.3:
     typescript "*"
     unist-util-visit "^4.1.2"
     vfile "^5.3.7"
-    vite "^4.3.9"
+    vite "^4.4.6"
     vitefu "^0.2.4"
     which-pm "^2.0.0"
     yargs-parser "^21.1.1"
@@ -3053,6 +3060,11 @@ napi-build-utils@^1.0.1:
   resolved "https://registry.yarnpkg.com/napi-build-utils/-/napi-build-utils-1.0.2.tgz#b1fddc0b2c46e380a0b7a76f984dd47c41a13806"
   integrity sha512-ONmRUqK7zj7DWX0D9ADe03wbwOBZxNAfF20PlGfCWQcD3+/MakShIHrMqx9YwPTfxDdF1zLeL+RGZiR9kGMLdg==
 
+network-information-types@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/network-information-types/-/network-information-types-0.1.1.tgz#07e98d8050dd1e8ac787f0cc5ebaae4935393861"
+  integrity sha512-mLXNafJYOkiJB6IlF727YWssTRpXitR+tKSLyA5VAdBi3SOvLf5gtizHgxf241YHPWocnAO/fAhVrB/68tPHDw==
+
 nlcst-to-string@^2.0.0:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/nlcst-to-string/-/nlcst-to-string-2.0.4.tgz#9315dfab80882bbfd86ddf1b706f53622dc400cc"
@@ -3407,10 +3419,10 @@ postcss@^8.4.23:
     picocolors "^1.0.0"
     source-map-js "^1.0.2"
 
-postcss@^8.4.25:
-  version "8.4.26"
-  resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.4.26.tgz#1bc62ab19f8e1e5463d98cf74af39702a00a9e94"
-  integrity sha512-jrXHFF8iTloAenySjM/ob3gSj7pCu0Ji49hnjqzsgSRa50hkWCKD0HQ+gMNJkW38jBI68MpAAg7ZWwHwX8NMMw==
+postcss@^8.4.26:
+  version "8.4.27"
+  resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.4.27.tgz#234d7e4b72e34ba5a92c29636734349e0d9c3057"
+  integrity sha512-gY/ACJtJPSmUFPDCHtX78+01fHa64FaU4zaaWfuh1MhGJISufJAH4cun6k/8fwsHYeK4UQmENQK+tRLCFJE8JQ==
   dependencies:
     nanoid "^3.3.6"
     picocolors "^1.0.0"
@@ -4310,13 +4322,13 @@ vfile@^5.0.0, vfile@^5.3.2, vfile@^5.3.7:
     unist-util-stringify-position "^3.0.0"
     vfile-message "^3.0.0"
 
-vite@^4.3.9:
-  version "4.4.4"
-  resolved "https://registry.yarnpkg.com/vite/-/vite-4.4.4.tgz#b76e6049c0e080cb54e735ad2d18287753752118"
-  integrity sha512-4mvsTxjkveWrKDJI70QmelfVqTm+ihFAb6+xf4sjEU2TmUCTlVX87tmg/QooPEMQb/lM9qGHT99ebqPziEd3wg==
+vite@^4.4.6:
+  version "4.4.8"
+  resolved "https://registry.yarnpkg.com/vite/-/vite-4.4.8.tgz#31e4a438f8748695c68bd57ffd262ba93540fdf7"
+  integrity sha512-LONawOUUjxQridNWGQlNizfKH89qPigK36XhMI7COMGztz8KNY0JHim7/xDd71CZwGT4HtSRgI7Hy+RlhG0Gvg==
   dependencies:
     esbuild "^0.18.10"
-    postcss "^8.4.25"
+    postcss "^8.4.26"
     rollup "^3.25.2"
   optionalDependencies:
     fsevents "~2.3.2"
