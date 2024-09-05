@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { Client } from "@notionhq/client";
-import type { RichTextItemResponse } from "@notionhq/client/build/src/api-endpoints";
+import type { PageObjectResponse } from "@notionhq/client/build/src/api-endpoints";
 import Footer from "../components/Footer.astro";
 import { PERSONAL_INFO } from "../consts";
 
@@ -11,19 +11,30 @@ const response = await notion.databases.query({
   database_id: "f14f1801015f48e5bd414a44be8d0038",
 });
 
+interface ImageData {
+  labelE: string;
+  hrefE: string;
+}
+
 const images = response.results
+  .filter((page): page is PageObjectResponse => 'properties' in page)
   .map((page) => {
-    if ("properties" in page) {
-      const title = page.properties.Title;
-      if (title && "type" in title && title.type === "title") {
-        const labelE = title.title[0].plain_text;
-        const hrefE = title.title[1].href;
-        return { labelE, hrefE };
-      }
+    const title = page.properties.Title;
+    if (
+      title &&
+      title.type === "title" &&
+      title.title.length >= 2 &&
+      title.title[0].type === "text" &&
+      title.title[1].type === "text"
+    ) {
+      return {
+        labelE: title.title[0].plain_text,
+        hrefE: title.title[1].plain_text,
+      };
     }
-    return false;
+    return null;
   })
-  .filter((title): title is RichTextItemResponse => !!title);
+  .filter((image): image is ImageData => image !== null);
 
 const { title, subtitle } = PERSONAL_INFO;
 ---
