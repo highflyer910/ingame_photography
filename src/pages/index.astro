@@ -1,0 +1,92 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Client } from "@notionhq/client";
+import type { RichTextItemResponse } from "@notionhq/client/build/src/api-endpoints";
+import Footer from "../components/Footer.astro";
+import { PERSONAL_INFO } from "../consts";
+
+const notion = new Client({ auth: "secret_oalZVaQstgyGreyYVFdLCeT8KkdrAeTbZCeZMdPXTqK" });
+
+const response = await notion.databases.query({
+  database_id: "f14f1801015f48e5bd414a44be8d0038",
+});
+
+const images = response.results
+  .map((page) => {
+    if ("properties" in page) {
+      const title = page.properties.Title;
+      if (title && "type" in title && title.type === "title") {
+        const labelE = title.title[0].plain_text;
+        const hrefE = title.title[1].href;
+        return { labelE, hrefE };
+      }
+    }
+    return false;
+  })
+  .filter((title): title is RichTextItemResponse => !!title);
+
+const { title, subtitle } = PERSONAL_INFO;
+---
+
+<Layout title={title}>
+  <div class="bg-gradient-to-b from-stone-100 to-stone-200 min-h-screen py-8 sm:py-12 lg:py-16 flex flex-col justify-between">
+    <main class="mb-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center mb-12 sm:mb-16">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-midnight mb-4 sm:mb-6">
+          {title}
+        </h1>
+        <p class="text-lg sm:text-xl text-midnight/80 max-w-2xl mx-auto">
+          {subtitle}
+        </p>
+      </div>
+
+      <div class="max-w-7xl mx-auto">
+        <div
+          id="my-gallery"
+          class="pswp-gallery grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8"
+        >
+          {images.map((image) => (
+            <a
+              href={image.hrefE}
+              data-cropped="true"
+              data-pswp-width="1800"
+              data-pswp-height="1100"
+              class="group aspect-w-16 aspect-h-9 block w-full overflow-hidden rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-midnight focus-within:ring-offset-2 focus-within:ring-offset-gray-100"
+            >
+              <img
+                src={image.hrefE}
+                alt={image.labelE}
+                class="pointer-events-none object-cover group-hover:opacity-75 transition duration-300 ease-in-out"
+              />
+              <div class="flex items-end p-4">
+                <div class="w-full backdrop-blur-sm bg-white/30 rounded-md p-2 text-sm font-medium text-white transition-opacity group-hover:opacity-100 opacity-0">
+                  {image.labelE}
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </main>
+
+    <Footer />
+  </div>
+</Layout>
+
+<style>
+  .aspect-w-16 {
+    position: relative;
+    padding-bottom: 56.25%;
+  }
+  .aspect-w-16 > img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    object-fit: cover;
+    object-position: center;
+  }
+</style>
