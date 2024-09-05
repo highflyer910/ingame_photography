@@ -1,6 +1,6 @@
 # In-Game Photography
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/a46beda4-7b15-4834-8da3-e52b4faeb917/deploy-status)](https://app.netlify.com/sites/ingame-photography/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/21d8cb98-ba06-4dad-a999-6c2a1e73eaac/deploy-status)](https://app.netlify.com/sites/ingame-photography/deploys)
 
 > Built with Astro and using Notion API.
 
