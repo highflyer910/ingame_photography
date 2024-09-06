@@ -15,6 +15,7 @@
     "@notionhq/client": "^2.2.15",
     "astro": "^4.15.3",
     "photoswipe": "^5.4.4",
+    "probe-image-size": "^7.2.3",
     "tailwindcss": "^3.4.10",
     "typescript": "^5.5.4"
   }
