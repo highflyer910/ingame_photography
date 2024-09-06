@@ -18,5 +18,8 @@
     "probe-image-size": "^7.2.3",
     "tailwindcss": "^3.4.10",
     "typescript": "^5.5.4"
+  },
+  "devDependencies": {
+    "@types/probe-image-size": "^7.2.5"
   }
 }

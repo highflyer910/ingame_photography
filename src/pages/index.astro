@@ -99,21 +99,24 @@ const { title, subtitle } = PERSONAL_INFO;
   </div>
 
   <script>
-    document.getElementById("enter-button").addEventListener("click", () => {
-      const overlay = document.getElementById("welcome-overlay");
-      const circle = document.getElementById("welcome-circle");
+    const enterButton = document.getElementById("enter-button");
+    const overlay = document.getElementById("welcome-overlay");
+    const circle = document.getElementById("welcome-circle");
 
-      // Shrink the circle
-      circle.classList.add("scale-0");
+    if (enterButton && overlay && circle) {
+      enterButton.addEventListener("click", () => {
+        // Shrink the circle
+        circle.classList.add("scale-0");
 
-      // Fade out the overlay
-      setTimeout(() => {
-        overlay.classList.add("opacity-0");
+        // Fade out the overlay
         setTimeout(() => {
-          overlay.style.display = "none"; // Remove overlay after animation
-        }, 700);
-      }, 500);
-    });
+          overlay.classList.add("opacity-0");
+          setTimeout(() => {
+            overlay.style.display = "none"; 
+          }, 700);
+        }, 500);
+      });
+    }
   </script>
 
   <style>
