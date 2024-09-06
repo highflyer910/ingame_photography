@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { Client } from "@notionhq/client";
-import type { RichTextItemResponse } from "@notionhq/client/build/src/api-endpoints";
+import type { PageObjectResponse } from "@notionhq/client/build/src/api-endpoints";
 import Footer from "../components/Footer.astro";
 import { PERSONAL_INFO } from "../consts";
 import probe from 'probe-image-size';
@@ -12,23 +12,31 @@ const response = await notion.databases.query({
   database_id: "f14f1801015f48e5bd414a44be8d0038",
 });
 
+interface NotionImage {
+  labelE: string;
+  hrefE: string;
+  width: number;
+  height: number;
+}
+
 const images = await Promise.all(response.results
   .map(async (page) => {
-    if ("properties" in page) {
-      const title = page.properties.Title;
-      if (title && "type" in title && title.type === "title") {
-        const labelE = title.title[0].plain_text;
-        const hrefE = title.title[1].href;
-        
+    const pageObj = page as PageObjectResponse;
+    const titleProperty = pageObj.properties.Title;
+    
+    if (titleProperty.type === "title" && titleProperty.title.length >= 2) {
+      const labelE = titleProperty.title[0].plain_text;
+      const hrefE = titleProperty.title[1].href;
+      
+      if (typeof labelE === "string" && typeof hrefE === "string") {
         try {
-          // Fetch image dimensions using probe-image-size
           const result = await probe(hrefE);
           return { 
             labelE, 
             hrefE, 
             width: result.width, 
             height: result.height 
-          };
+          } as NotionImage;
         } catch (error) {
           console.error(`Error fetching image dimensions for ${hrefE}:`, error);
           return null;
@@ -38,8 +46,7 @@ const images = await Promise.all(response.results
     return null;
   }));
 
-// Filter out any null results
-const validImages = images.filter((image): image is NonNullable<typeof image> => image !== null);
+const validImages = images.filter((image): image is NotionImage => image !== null);
 
 const { title, subtitle } = PERSONAL_INFO;
 ---
@@ -105,10 +112,7 @@ const { title, subtitle } = PERSONAL_INFO;
 
     if (enterButton && overlay && circle) {
       enterButton.addEventListener("click", () => {
-        // Shrink the circle
         circle.classList.add("scale-0");
-
-        // Fade out the overlay
         setTimeout(() => {
           overlay.classList.add("opacity-0");
           setTimeout(() => {
