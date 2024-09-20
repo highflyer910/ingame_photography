@@ -10,7 +10,7 @@ export const SOCIAL = [
     title: "In-Game Photography",
     subtitle: 'Through the Lens of Virtual Worlds: A Humble Collection of VR Photography',
     role: 'In-Game Photographer',
-    contact: 'mailto:mushambadzeteona@gmail.com',
+    contact: 'https://www.teona.sbs/',
     avatar:
       '/about.png',
     about:
